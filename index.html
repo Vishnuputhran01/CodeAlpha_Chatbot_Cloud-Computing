@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Bus Service - AI Assistant</title>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="CodeAlpha Assistant"
+        agent-id="490c38eb-5565-4ce8-866d-3740d013c8b6"
+        language-code="en"
+    ></df-messenger>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #00ff88;
+            font-weight: bold;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            font-size: 1em;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .chat-instruction {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 4px solid #00ff88;
+        }
+        
+        .chat-instruction h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .command-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .command {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+        
+        /* Dialogflow Messenger Customization */
+        df-messenger {
+            --df-messenger-bot-message: #007cba;
+            --df-messenger-button-titlebar-color: #007cba;
+            --df-messenger-chat-background: #f8f9fa;
+            --df-messenger-font-color: #ffffff;
+            --df-messenger-send-icon: #ffffff;
+            --df-messenger-user-message: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CodeAlpha Bus Service</h1>
+            <p>Your Reliable Partner for Safe and Comfortable Travel Across the City</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">AI</div>
+                <h3>Instant Support</h3>
+                <p>Get immediate answers to all your bus service questions with our AI assistant</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">24/7</div>
+                <h3>Always Available</h3>
+                <p>Round-the-clock customer support for all your travel needs and inquiries</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">BOOK</div>
+                <h3>Easy Booking</h3>
+                <p>Quick and hassle-free ticket booking with multiple payment options</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">MAP</div>
+                <h3>Route Information</h3>
+                <p>Comprehensive details about all bus routes, schedules, and stops</p>
+            </div>
+        </div>
+        
+        <div class="chat-instruction">
+            <h3>Chat Assistant Ready to Help</h3>
+            <p>Our AI assistant is available in the bottom right corner. Click the chat icon to start conversation!</p>
+            
+            <div class="command-list">
+                <div class="command">"Hello"</div>
+                <div class="command">"Book a ticket"</div>
+                <div class="command">"Bus schedules"</div>
+                <div class="command">"Route information"</div>
+                <div class="command">"Ticket prices"</div>
+                <div class="command">"Contact support"</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 CodeAlpha Bus Service | Cloud Computing Internship Project</p>
+        <p>AI-Powered Customer Service Chatbot</p>
+    </div>
+</body>
+</html>
